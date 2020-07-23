@@ -19,7 +19,7 @@ numero = 50;
 area = 20;
 
 //Se muestran los últimos valores asignados
-// console.log(numero);
+console.log(numero);
 // console.log(area);
 
 //TIPOS DE DATO
