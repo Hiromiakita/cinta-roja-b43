@@ -1,6 +1,6 @@
 //OBJETOS LITERALES
 
-let persona = {
+let persona1 = {
     //ATRIBUTOS
     //LLAVE: VALOR,
     nombre: 'Mauricio',
@@ -30,6 +30,42 @@ let persona = {
 
 };
 
+let persona2 = {
+    nombre: 'Héctor',
+    apellido: 'Lopez',
+    edad: 15,
+    pais: 'Argentina',
+    esMayor: false,
+
+    saludar() {
+        console.log('HOLA!');
+    },
+
+    despedir() {
+        console.log('ADIOS!!');
+    }
+}
+
+let persona3 = {
+    nombre: 'Julio',
+    apellido: 'Rodriguez',
+    edad: 15,
+    pais: 'Argentina',
+    esMayor: false,
+
+    saludar() {
+        console.log('HOLA!');
+    },
+
+    despedir() {
+        console.log('ADIOS!!');
+    }
+}
+
+console.log(persona1);
+console.log(persona2);
+console.log(persona3);
+
 // console.log(persona);
 // console.log(persona.nombre);
 // console.log(persona.apellido);
@@ -38,31 +74,31 @@ let persona = {
 // persona.despedir();
 // persona.gritar();
 
-let perrito = {
-    //ATRIBUTOS
-    color: 'gris',
-    patas: 3,
-    tienePelo: false,
-    nombre: 'Conchita',
+// let perrito = {
+//     //ATRIBUTOS
+//     color: 'gris',
+//     patas: 3,
+//     tienePelo: false,
+//     nombre: 'Conchita',
 
-    //MÉTODOS
-    ladrar: function () {
-        console.log('GUAAAUUU!!');
-    },
+//     //MÉTODOS
+//     ladrar: function () {
+//         console.log('GUAAAUUU!!');
+//     },
     
-    comer: function () {
-        console.log('estoy comiendo');
-    }
-};
+//     comer: function () {
+//         console.log('estoy comiendo');
+//     }
+// };
 
-console.log(perrito);
+// console.log(perrito);
 
-perrito.dueno = 'Hiromi';
+// perrito.dueno = 'Hiromi';
 
-console.log(perrito);
+// console.log(perrito);
 
-perrito.estarAlerta = function () {
-    console.log('te estoy vigilando!!');
-}
+// perrito.estarAlerta = function () {
+//     console.log('te estoy vigilando!!');
+// }
 
-console.log(perrito);
+// console.log(perrito);
