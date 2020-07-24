@@ -124,3 +124,27 @@ for (let i = 0; i < receta.ingredientes.length; i++) {
 //     cada libro imprime el titulo y autor, junto con su 
 //     status de lectura (si ya ha sido leído, o no).
 // -------------------------------------------------------------
+
+
+let libros = [
+    {
+        titulo: 'Cien años de soledad',
+        autor: 'Gabriel Garcia Marquez',
+        leido: false
+    },
+    {
+        titulo: 'Crimen y castigo',
+        autor: 'Fedor',
+        leido: true
+    }
+];
+
+for (let i = 0; i < libros.length; i++) {
+    // console.log(libros[i].titulo);
+    // console.log(libros[i].autor);
+    if(libros[i].leido) {
+        console.log(`Ya leíste ${libros[i].titulo} de ${libros[i].autor}`);
+    } else {
+        console.log(`Aún NO leíste ${libros[i].titulo} de ${libros[i].autor}`);
+    }
+}

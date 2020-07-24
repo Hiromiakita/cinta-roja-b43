@@ -172,3 +172,15 @@ function saludarUsuario(nombre) {
 
 // saludarUsuario(nombresUsuario);
 // resultadoMultiplicacion(num3, num4);
+
+function testNormal () {
+    console.log('normal', this);
+}
+
+let test =  () => {
+    console.log('arrow', this);
+}
+
+testNormal();
+
+test();
