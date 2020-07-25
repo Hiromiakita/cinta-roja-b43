@@ -8,6 +8,26 @@
 //    también guardando un valor numérico.
 // ------------------------------------------------------------
 
+class Maestro {
+    constructor (materia, calificaciones) {
+        this.materia = materia;
+        this.calificaciones = calificaciones;
+    };
+
+    calucularPromedio (){
+        let suma = 0;
+        let promedio = 0;
+        for (let i = 0; i < this.calificaciones.length; i++){
+            suma += this.calificaciones[i];
+        }
+        promedio = suma/this.calificaciones.length;
+        return console.log(promedio);
+    }
+}
+
+let maestro1 = new Maestro('Matemáticas', [10, 9, 8, 5]);
+maestro1.calucularPromedio();
+
 // ------------------------------------------------------------
 // 2.- Crea una superclase llamada Electrodoméstico con las 
 //     siguientes características:
