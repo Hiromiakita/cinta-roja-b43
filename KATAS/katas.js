@@ -20,7 +20,7 @@
 
 // evaluateLetter('c');
 
-const vocales = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+const vocales = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'OU'];
 
 function evaluateLetter(letra){
     let checker = vocales.includes(letra) ? 'Vocal' : 'Consonante';
