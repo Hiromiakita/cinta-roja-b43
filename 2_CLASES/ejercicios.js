@@ -104,3 +104,4 @@ console.log(cuenta1);
 
 let cuenta2 = new Cuenta('Claudia Perez');
 console.log(cuenta2);
+
