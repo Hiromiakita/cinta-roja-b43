@@ -16,11 +16,14 @@ let persona1 = {
 
     //ECMA 5
     despedir() {
-        console.log('Adios!!')
+        console.log('Adios!!' + this.nombre);
     },
     //ECMA 6 | Arrow
     gritar: () => {
-        console.log('ESTOY GRITANDO!!!!!!')
+        console.log('ESTOY GRITANDO!!!!!! y soy');
+        // no podemos usar this con una arrow
+        // console.log('ESTOY GRITANDO!!!!!! y soy' + this.nombre);
+
     },
 
     //Vanila js
@@ -65,6 +68,10 @@ let persona3 = {
 console.log(persona1);
 console.log(persona2);
 console.log(persona3);
+
+//Comprobando el uso del this en cada caso
+// persona1.despedir();
+// persona1.gritar();
 
 // console.log(persona);
 // console.log(persona.nombre);
