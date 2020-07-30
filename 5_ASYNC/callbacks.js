@@ -19,11 +19,32 @@ let nombreUsario = () => console.log('soy un usuario!');
 
 let mostrarPalabra = (palabra) => console.log(`la palabra es: ${palabra}`);
 
+let mostrarHola = palabra => console.log(`Palabra recibida: ${palabra}`);
 
-function mostrarPalabra (palabra) {
-    return console.log(`la palabra es: ${palabra}`)
-}
+
+// function mostrarPalabra (palabra) {
+//     return console.log(`la palabra es: ${palabra}`)
+// }
 
 //mandar llamar - ejecutar 
-saludo(mostrarPalabra, nombreUsario);
+// saludo(mostrarHola, nombreUsario);
 
+
+let getUsuarios = (callback, fueExitoso) => {
+    usuarios = [
+        { nombreUsuario: 'Miri', nacionalidad : 'mexicana'},
+        { nombreUsuario: 'Juan', nacionalidad : 'colombiano'},
+        { nombreUsuario: 'Héctor', nacionalidad : 'brasileño'},
+        { nombreUsuario: 'Diego', nacionalidad : 'argentino'},
+    ];
+
+    setTimeout(()=> { 
+        if(fueExitoso) {
+            callback(usuarios, 'status code 200');
+        } else {
+            callback('ERROR', 'status code 404');
+        }
+    }, 5000)
+}
+
+getUsuarios( (respuesta, statusCode) => console.log(respuesta, 'status: ', statusCode), false);
