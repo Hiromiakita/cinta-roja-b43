@@ -27,4 +27,19 @@ function evaluateLetter(letra){
     return checker;
 }
 
-console.log(evaluateLetter('b'));
+// console.log(evaluateLetter('b'));
+
+
+let palindromo = oracion => {
+    oracion = oracion.toLowerCase
+    for ( let i = 0; i < oracion.length; i++ ) {
+        if (oracion[i] !== oracion[oracion.length -1 -i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+console.log(palindromo('Ana'));
+
