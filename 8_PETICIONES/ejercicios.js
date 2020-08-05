@@ -1,9 +1,8 @@
-const request = require("request");
+const request = require('request');
+const { Libro } = require('./Libro');
 
 // 1.- Hacer una petición a cualquier pokemon y mostrar sus tipos.
 //                     https://pokeapi.co/
-
-
 
 
 let getPokemon = (id) => {
@@ -19,26 +18,78 @@ let getPokemon = (id) => {
     });
 };
 
-getPokemon(1);
-getPokemon(2);
-getPokemon(2098976567);
+// getPokemon(1);
+// getPokemon(2);
+// getPokemon(2098976567);
 
 // 2.- Hacer una funcion que haga una petición 
 //     (Ejemplo: peticionLibro("i robot");
 //     Buscar un libro y traer el o los autores del primer libro
 //     http://openlibrary.org/search.json?q=i+robot) 
 
-let getLibro = (busqueda) => {
+let libros = [];
+
+let getAutores = (busqueda) => {
 
     const URL = `http://openlibrary.org/search.json?q=${busqueda}`;
 
+    request(URL, (err, res, body) => {
+
+        let bodyJson = JSON.parse(body);
+        let autores = bodyJson.docs[0].author_name;
+        let titulo = bodyJson.docs[0].title;
+
+        let libro = new Libro(titulo, autores);
+
+        console.log(libro);
+
+        autores.forEach( (value, index) => {
+            console.log(`Libro: ${titulo}: Autor ${index + 1}: ${value}`);
+        });
+
+        //Autor 1: jfjkhgdg
+        //Autor 2: fjhjgjdhg
+        //Autor 3: fhgjh
+
+        return libro;
+    });
 }
+
+// getAutores("el principito");
+// getAutores("i robot");
+// getAutores("harry potter");
+// getAutores("la biblia");
+// getAutores("el quijote");
+// getAutores("el capital");
 
 
 
 // 3.- Hacer una petición por autor y devolver la lista de 
 //     sus libros
 //         http://openlibrary.org/search.json?author=asimov
+
+
+
+let getLibros = (autor) => {
+
+    const URL = `http://openlibrary.org/search.json?author=${autor}`;
+
+    request(URL, (error, respuesta, body) => {
+
+        let bodyJson = JSON.parse(body);
+
+        if ( bodyJson.docs.length > 0 ) {
+            let libros = bodyJson.docs.map(infoLibro => infoLibro.title);
+            console.log(libros);
+        } else {
+            console.log('NO SE ENCONTRARON RESULTADOS');
+        }
+
+    })
+}
+
+// getLibros('asimov');
+getLibros('gabriel garcia marquez');
 
 
 // 4.- Hacer una petición y devolver el género de la banda deseada
