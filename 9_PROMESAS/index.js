@@ -3,8 +3,8 @@ let nuestraPromesa = new Promise( (resolve, reject) => {
     let numero = Math.floor(Math.random() * 100);
     console.log(numero);    
 
-    //QUIERO NÚMERO DEL 30 AL 60
-
+    //QUIERO NÚMERO DEL 30 AL 60 
+    
     if (numero < 30) {
         reject('el número es menor que 30, necesito uno del 30 al 60');
     } else if (numero <= 60 ) {
