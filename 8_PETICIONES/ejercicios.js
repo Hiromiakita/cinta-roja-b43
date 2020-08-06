@@ -89,7 +89,7 @@ let getLibros = (autor) => {
 }
 
 // getLibros('asimov');
-getLibros('gabriel garcia marquez');
+// getLibros('gabriel garcia marquez');
 
 
 // 4.- Hacer una petición y devolver el género de la banda deseada
@@ -104,7 +104,46 @@ getLibros('gabriel garcia marquez');
 //     para la tierra de la semana pasada hasta el día de ayer.
 //                     https://api.nasa.gov/
 
-// 7.- Traer los primeros 151 pokemon de la primera generacion y 
+// 7.- Traer los primeros 3 pokemon de la primera generacion y 
 //     devolver un arreglo de objetos con el nombre, sus moves, tipos, tamaño 
 //     y peso.
 //                       https://pokeapi.co/
+
+
+let getPokemones = (cantidad) => {
+
+    const URL = 'https://pokeapi.co/api/v2/pokemon';
+
+    return new Promise ((resolve, reject) => {
+        request(URL, (err, resp, body) => {
+
+            
+            let bodyJson = JSON.parse(body);
+    
+            let pokemones = bodyJson.results.slice(0, cantidad);
+            console.log(pokemones.length);
+            // [0, 1, 2, 3]
+
+            console.log(pokemones);
+
+            setTimeout( () => {
+                if(pokemones.length > 0 && cantidad <= 20) {
+                    resolve('Todo bien!!');
+                } else if(cantidad > 20)  {
+                    reject('Excedes el número de pokemos que existen (20)');
+                } else {
+                    reject('No se encontraron resultados');
+                }
+            }, 2000);
+
+        })
+    });
+
+}
+
+
+
+getPokemones(6)
+    .then( response => console.log(`Mensaje de éxito: ${response}`) )
+    .catch( error => console.log(error) );
+
